@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: 'Post title'
 date: 2023-08-28 16:50:44 -0300
 category: hardware
