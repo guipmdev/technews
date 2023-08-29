@@ -1,13 +1,17 @@
-footer > a {
-  color: #d6d6d6;
+footer {
+  min-height: 2rem;
 
-  transition: color 0.2s;
+  & > a {
+    color: #d6d6d6;
 
-  &:hover {
-    color: #479ef5;
-  }
+    transition: color 0.2s;
 
-  &.disabled {
-    color: #5c5c5c;
+    &:hover {
+      color: #479ef5;
+    }
+
+    &.disabled {
+      color: #5c5c5c;
+    }
   }
 }
