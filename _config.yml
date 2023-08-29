@@ -52,3 +52,6 @@ plugins:
 include: [_pages]
 
 permalink: none
+
+sass:
+    sass_dir: _sass

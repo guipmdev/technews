@@ -1,0 +1,17 @@
+/* Header */
+
+header {
+  background-color: #292929;
+
+  .logo {
+    height: 88px;
+  }
+
+  > div {
+    height: 166px;
+  }
+
+  ul {
+    gap: 0.75rem;
+  }
+}
