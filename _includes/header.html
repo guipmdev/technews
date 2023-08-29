@@ -6,16 +6,19 @@
       <h1 class="large-title text-uppercase">TECHNEWS</h1>
     </div>
 
-    <ul class="d-flex flex-nowrap overflow-auto vw-100 px-5">
-      {% for category in site.categories %} {% capture category_name
-      %}{{category[0]}}{% endcapture %}
+    <nav class="overflow-x-auto vw-100">
+      <ul class="d-flex flex-nowrap px-5">
+        {% for category in site.categories %} {% capture category_name
+        %}{{category[0]}}{% endcapture %}
 
-      <li>
-        <a href="#"
-          >{% include category.html type="clickable" content=category_name %}</a
-        >
-      </li>
-      {% endfor %}
-    </ul>
+        <li>
+          <a href="#"
+            >{% include category.html type="clickable" content=category_name
+            %}</a
+          >
+        </li>
+        {% endfor %}
+      </ul>
+    </nav>
   </div>
 </header>

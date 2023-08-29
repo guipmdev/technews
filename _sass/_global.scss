@@ -24,6 +24,11 @@ a {
   text-decoration: none;
 }
 
+*:focus {
+  outline: 2px solid #ffffff;
+  outline-offset: 1px;
+}
+
 .content {
   width: 100%;
   max-width: 1280px;
