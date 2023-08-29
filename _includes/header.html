@@ -7,9 +7,60 @@
     </div>
 
     <ul class="d-flex flex-nowrap">
+      {% for category in site.categories %} {% capture category_name
+      %}{{category[0]}}{% endcapture %}
+
       <li>
-        <a href="#"><img src="#" alt="" />Text</a>
+        <a href="#"
+          >{% include category.html type="clickable" content=category_name %}</a
+        >
       </li>
+      <li>
+        <a href="#"
+          >{% include category.html type="clickable" content=category_name %}</a
+        >
+      </li>
+      <li>
+        <a href="#"
+          >{% include category.html type="clickable" content=category_name %}</a
+        >
+      </li>
+      <li>
+        <a href="#"
+          >{% include category.html type="clickable" content=category_name %}</a
+        >
+      </li>
+      <li>
+        <a href="#"
+          >{% include category.html type="clickable" content=category_name %}</a
+        >
+      </li>
+      <li>
+        <a href="#"
+          >{% include category.html type="clickable" content=category_name %}</a
+        >
+      </li>
+      <li>
+        <a href="#"
+          >{% include category.html type="clickable" content=category_name %}</a
+        >
+      </li>
+      <li>
+        <a href="#"
+          >{% include category.html type="clickable" content=category_name %}</a
+        >
+      </li>
+      <li>
+        <a href="#"
+          >{% include category.html type="clickable" content=category_name %}</a
+        >
+      </li>
+      <li>
+        <a href="#"
+          >{% include category.html type="clickable" content=category_name %}</a
+        >
+      </li>
+      {% endfor %}
     </ul>
   </div>
 </header>

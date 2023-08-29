@@ -1,0 +1,7 @@
+{% capture icon_path %}assets/images/icons/{{include.content}}.png{% endcapture
+%}
+
+<div class="category d-flex align-items-center rounded-pill {{include.type}}">
+  <img src="{{icon_path | absolute_url}}" alt="" />
+  <span class="body-2">{{ include.content }}</span>
+</div>
