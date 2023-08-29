@@ -23,10 +23,10 @@
 
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | absolute_url }}" />
   </head>
-  <body>
+  <body class="d-flex flex-column min-vh-100">
     {% include header.html %}
 
-    <main>{{content}}</main>
+    <main class="content flex-grow-1">{{content}}</main>
 
     {% include footer.html %}
 
