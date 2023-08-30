@@ -16,10 +16,12 @@ order: 1
 <section class="d-flex flex-column" style="padding: 0.75rem 0; gap: 2rem">
   <h2 class="title-1">Outros posts</h2>
 
-  <div class="d-flex flex-column gap-4">
+  <div class="d-flex flex-column align-items-center gap-4">
     <ol class="posts-grid d-grid gap-4">
       {% for post in site.posts offset: 1 %} {% include post-card.html post=post
       type='no-excerpt' %} {% endfor %}
     </ol>
+
+    {% include button.html text='Carregar mais' style='secondary' width='full'%}
   </div>
 </section>
