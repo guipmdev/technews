@@ -1,0 +1,98 @@
+{% if include.label_position %}<!---->
+{% capture label_position %}{{include.label_position}}-label{% endcapture %}<!---->
+{% else %}<!---->
+{% capture label_position %}{% endcapture %}<!---->
+{% endif %}
+
+<!-- ========== -->
+
+{% if include.invalid %}<!---->
+{% capture invalid %}invalid{% endcapture %}<!---->
+{% else %}<!---->
+{% capture invalid %}{% endcapture %}<!---->
+{% endif %}
+
+<!-- ========== -->
+
+{% if include.required %}<!---->
+{% capture required %}required{% endcapture %}<!---->
+{% else %}<!---->
+{% capture required %}{% endcapture %}<!---->
+{% endif %}
+
+<div
+  class="field d-flex w-100 {{label_position}} {{invalid}} {{required}}"
+  style="gap: 0.375rem"
+>
+  <div class="label d-flex align-items-center text-nowrap" style="gap: 0.25rem">
+    {{include.label | default: 'Label'}}
+    <span class="body-1 required-asterisk">*</span>
+  </div>
+
+  <div class="input-container d-flex flex-column w-100" style="gap: 0.375rem">
+    <div
+      class="input position-relative overflow-hidden"
+      style="border-radius: 0.25rem"
+    >
+      {% if include.type == 'textarea' %}<!---->
+      <textarea
+        placeholder="{{include.placeholder | default: ''}}"
+        class="body-1 w-100"
+        {%
+        if
+        include.name
+        %}
+        name="{{include.name}}"
+        {%
+        endif
+        %}
+        style="padding: 0.3125rem 0.75rem 0.4375rem; border-radius: 0.25rem"
+      ></textarea>
+      {% else %}<!---->
+      <input
+        type="{{include.type | default: 'text'}}"
+        placeholder="{{include.placeholder | default: ''}}"
+        class="body-1 w-100"
+        {%
+        if
+        required
+        %}
+        required
+        {%
+        endif
+        %}
+        {%
+        if
+        include.name
+        %}
+        name="{{include.name}}"
+        {%
+        endif
+        %}
+        style="padding: 0.3125rem 0.75rem 0.4375rem; border-radius: 0.25rem"
+      />
+      {% endif %}
+      <div
+        class="indicators position-absolute start-0 bottom-0 d-flex flex-column align-items-center w-100"
+      >
+        <span class="in-focus position-relative" style="bottom: -2px"></span>
+        <span class="underline w-100"></span>
+      </div>
+    </div>
+
+    <div
+      class="caption-1 status-text align-items-center"
+      style="gap: 0.25rem; padding-top: 0.125rem"
+    >
+      <img
+        src="{{'/assets/images/icons/information-circle.svg' | absolute_url}}"
+        alt=""
+        style="width: 0.75rem; height: 0.75rem; padding-top: 0.125rem"
+      />
+      <span
+        >{{include.status_text | default: 'O valor desse campo é inválido!'
+        }}</span
+      >
+    </div>
+  </div>
+</div>
