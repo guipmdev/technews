@@ -1,0 +1,38 @@
+.field {
+  flex-direction: column;
+
+  & > .label > .required-asterisk {
+    display: none;
+
+    color: #dc626d;
+  }
+
+  & > .input {
+    & > input {
+      background-color: #292929;
+      border: 1px solid #666666;
+
+      &::placeholder {
+        color: #5c5c5c;
+      }
+    }
+
+    & > .status-text {
+      display: none;
+
+      color: #dc626d;
+    }
+  }
+
+  &.left-label {
+    flex-direction: row;
+  }
+
+  &.invalid > .input > .status-text {
+    display: flex;
+  }
+
+  &.required > .label > .required-asterisk {
+    display: initial;
+  }
+}
