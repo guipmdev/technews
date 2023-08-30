@@ -21,12 +21,20 @@ li {
 }
 
 a {
+  color: #ffffff;
   text-decoration: none;
 }
 
 *:focus {
   outline: 2px solid #ffffff;
   outline-offset: 1px;
+}
+
+button,
+input,
+textarea {
+  background: transparent;
+  border: none;
 }
 
 .content {

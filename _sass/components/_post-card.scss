@@ -1,0 +1,70 @@
+.post-card {
+  background-color: #292929;
+
+  border-radius: 8px;
+
+  transition: 0.2s background-color;
+
+  & > a > div {
+    flex-direction: row-reverse;
+
+    & .image-cover {
+      background-color: #141414;
+
+      flex: 1;
+    }
+
+    & .post-infos {
+      padding: 0.75rem;
+      gap: 0.75rem;
+
+      flex: 1;
+    }
+  }
+
+  &.no-excerpt {
+    & > a > div {
+      flex-direction: column;
+
+      height: 100%;
+
+      & .image-cover {
+        flex: initial;
+
+        height: 130px;
+
+        background-color: #141414;
+      }
+
+      .post-infos {
+        & > h3 {
+          height: 100%;
+        }
+
+        & > p {
+          display: none;
+        }
+
+        & > .social-buttons {
+          justify-content: space-between;
+        }
+      }
+    }
+  }
+
+  &.search {
+    & > a > div {
+      flex-direction: row;
+
+      & .image-cover {
+        flex: initial;
+
+        width: 235px;
+      }
+    }
+  }
+
+  &:hover {
+    background-color: #3d3d3d;
+  }
+}
