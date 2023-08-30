@@ -12,7 +12,10 @@
       & > input,
       & > textarea {
         background-color: #292929;
+
+        padding: 0.3125rem 0.75rem 0.4375rem;
         border: 1px solid #666666;
+        border-radius: 0.25rem;
 
         transition: border-color 0.2s;
 

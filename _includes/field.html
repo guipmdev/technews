@@ -31,7 +31,7 @@
 
   <div class="input-container d-flex flex-column w-100" style="gap: 0.375rem">
     <div
-      class="input position-relative overflow-hidden"
+      class="input position-relative overflow-hidden h-100"
       style="border-radius: 0.25rem"
     >
       {% if include.type == 'textarea' %}<!---->
@@ -46,13 +46,12 @@
         {%
         endif
         %}
-        style="padding: 0.3125rem 0.75rem 0.4375rem; border-radius: 0.25rem"
       ></textarea>
       {% else %}<!---->
       <input
         type="{{include.type | default: 'text'}}"
         placeholder="{{include.placeholder | default: ''}}"
-        class="body-1 w-100"
+        class="body-1 w-100 h-100"
         {%
         if
         required
@@ -69,7 +68,6 @@
         {%
         endif
         %}
-        style="padding: 0.3125rem 0.75rem 0.4375rem; border-radius: 0.25rem"
       />
       {% endif %}
       <div
