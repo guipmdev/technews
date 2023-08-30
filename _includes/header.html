@@ -6,15 +6,14 @@
       <h1 class="large-title text-uppercase">TECHNEWS</h1>
     </div>
 
-    <nav class="vw-100">
+    <nav>
       <ul class="d-flex overflow-x-auto">
         {% for category in site.categories %} {% capture category_name
         %}{{category[0]}}{% endcapture %}
 
         <li>
           <a href="#"
-            >{% include category.html type="clickable" content=category_name
-            %}</a
+            >{% include category.html type="clickable" text=category_name %}</a
           >
         </li>
         {% endfor %}

@@ -1,0 +1,22 @@
+{% capture regular_icon_path
+%}assets/images/icons/{{include.icon}}-regular.svg{% endcapture %} {% capture
+filled_icon_path %}assets/images/icons/{{include.icon}}-filled.svg{% endcapture
+%}
+
+<button
+  class="social-button position-relative position-relative"
+  title="{{include.title}}"
+>
+  <div class="position-relative">
+    <img
+      src="{{regular_icon_path | absolute_url}}"
+      alt=""
+      class="w-100 h-100"
+    />
+    <img
+      src="{{filled_icon_path | absolute_url}}"
+      alt=""
+      class="position-absolute top-0 start-0 w-100 h-100"
+    />
+  </div>
+</button>
