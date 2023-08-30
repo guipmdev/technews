@@ -1,10 +1,10 @@
 <section class="newsletter d-flex flex-column gap-3" style="padding: 0.75rem 0">
   <h4 class="title-3">Fique antenado nos nossos próximos posts!</h4>
 
-  <div class="d-flex" style="gap: 0.75rem">
-    {% include field.html required=true %}
+  <form class="d-flex" style="gap: 0.75rem">
+    {% include field.html label='Seu melhor e-mail'
+    placeholder='joaodasilva@email.com' name='email' label_position='left'
+    required=true %}
     <button type="submit">Cadastrar</button>
-  </div>
-
-  {% include field.html label_position='left' invalid=true %}
+  </form>
 </section>
