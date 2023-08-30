@@ -1,14 +1,19 @@
 .button {
+  width: fit-content;
+
   background-color: #115ea3;
 
   padding: 0.3125rem 0.75rem 0.4375rem;
-
   border-radius: 4px;
 
   transition: background-color 0.2s;
 
   &:hover {
     background-color: #0f6cbd;
+  }
+
+  &.disabled {
+    width: 100%;
   }
 
   &.disabled {
