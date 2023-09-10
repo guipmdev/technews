@@ -8,4 +8,9 @@ article {
     color: #adadad;
     text-align: center;
   }
+
+  & > span {
+    font-style: italic;
+    font-weight: bold;
+  }
 }
