@@ -4,10 +4,12 @@ filled_icon_path %}assets/images/icons/{{include.icon}}-filled.svg{% endcapture
 %}
 
 <button
-  class="social-button position-relative position-relative"
+  class="social-button position-relative"
   title="{{include.title}}"
+  data-button-type="{{include.type}}"
+  data-post-identifier="{{include.identifier}}"
 >
-  <div class="position-relative">
+  <div class="position-relative" style="width: 1rem; height: 1rem">
     <img
       src="{{regular_icon_path | absolute_url}}"
       alt=""
