@@ -48,3 +48,13 @@ textarea {
 
   padding: 0 3rem;
 }
+
+@media (max-width: 640px) {
+  html {
+    font-size: 87.5%;
+  }
+
+  .content {
+    padding: 0 1.5rem;
+  }
+}
