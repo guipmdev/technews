@@ -1,5 +1,6 @@
 .button {
   width: fit-content;
+  height: fit-content;
 
   background-color: #115ea3;
 
@@ -55,6 +56,12 @@
 
     &.disabled {
       color: #5c5c5c;
+    }
+  }
+
+  &.responsive {
+    @media (max-width: 640px) {
+      width: 100%;
     }
   }
 }

@@ -5,7 +5,7 @@ permalink: /
 ---
 
 <section class="d-flex flex-column" style="padding: 0.75rem 0; gap: 2rem">
-  <h2 class="title-1">Em destaque</h2>
+  <h2 class="title-1 text-align-center">Em destaque</h2>
 
   {% for post in site.posts limit: 1 %} {% include post-card.html post=post %}
   {% endfor %}

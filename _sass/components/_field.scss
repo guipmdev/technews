@@ -37,6 +37,10 @@
         }
       }
 
+      & > textarea {
+        min-height: 2.125rem;
+      }
+
       & > .indicators {
         & > .in-focus {
           width: 0;

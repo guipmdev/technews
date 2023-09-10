@@ -4,27 +4,35 @@ title: Contato
 permalink: /contact
 ---
 
-<h2>Entre em Contato</h2>
-
-<p>Para entrar em contato conosco, preencha o formulário abaixo:</p>
-
-<form
-  action="{{ '/_api/processaContato.php' | absolute_url }}"
-  method="POST"
-  enctype="multipart/form-data"
+<section
+  class="d-flex flex-column align-items-center"
+  style="padding: 0.75rem 0; gap: 2rem"
 >
-  <label for="nome">Nome:</label>
-  <input type="text" id="nome" name="nome" required /><br /><br />
+  <div class="d-flex flex-column gap-2">
+    <h2 class="title-1 text-center">Entre em Contato</h2>
 
-  <label for="email">E-mail:</label>
-  <input type="email" id="email" name="email" required /><br /><br />
+    <p class="text-center">
+      Para entrar em contato conosco, preencha o formulário abaixo:
+    </p>
+  </div>
 
-  <label for="mensagem">Mensagem:</label><br />
-  <textarea id="mensagem" name="mensagem" rows="4" required></textarea
-  ><br /><br />
-
-  <input type="submit" name="acao" value="Enviar" />
-</form>
+  <form
+    action="{{ '/_api/processaContato.php' | absolute_url }}"
+    method="POST"
+    enctype="multipart/form-data"
+    class="d-flex flex-column align-items-end gap-4 w-100"
+    style="max-width: 640px"
+  >
+    {% include field.html label='Nome completo' placeholder='João da Silva'
+    name='nome' required=true %}<!---->
+    {% include field.html label='E-mail' placeholder='joaodasilva@email.com'
+    name='email' required=true %}<!---->
+    {% include field.html label='Mensagem' name='mensagem' required=true
+    type='textarea' placeholder='Adorei as matérias que falam sobre Inteligência
+    Artificial!'%}<!---->
+    {% include button.html name="acao" text='Enviar' responsive=true %}
+  </form>
+</section>
 
 <div>
   <h2>Nossa Equipe</h2>
