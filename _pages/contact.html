@@ -5,15 +5,13 @@ permalink: /contact
 ---
 
 <section
-  class="d-flex flex-column align-items-center"
+  class="d-flex flex-column align-items-center text-center"
   style="padding: 0.75rem 0; gap: 2rem"
 >
   <div class="d-flex flex-column gap-2">
-    <h2 class="title-1 text-center">Entre em Contato</h2>
+    <h2 class="title-1">Entre em Contato</h2>
 
-    <p class="text-center">
-      Para entrar em contato conosco, preencha o formulário abaixo:
-    </p>
+    <p>Para entrar em contato conosco, preencha o formulário abaixo:</p>
   </div>
 
   <form
@@ -28,38 +26,31 @@ permalink: /contact
     {% include field.html label='E-mail' placeholder='joaodasilva@email.com'
     name='email' required=true %}<!---->
     {% include field.html label='Mensagem' name='mensagem' required=true
-    type='textarea' placeholder='Adorei as matérias que falam sobre Inteligência
-    Artificial!'%}<!---->
+    placeholder='Adorei as matérias que falam sobre Inteligência Artificial!'
+    type='textarea'%}<!---->
     {% include button.html name="acao" text='Enviar' responsive=true %}
   </form>
 </section>
 
-<div>
-  <h2>Nossa Equipe</h2>
+<section class="d-flex flex-column gap-3 text-center">
+  <h3 class="title-3">Nossa incrível equipe!</h3>
 
-  <span>Conheça a equipe talentosa por trás da nossa organização.</span>
-
-  <div class="team-member">
-    <img src="URL_DA_IMAGEM_MEMBRO_1" alt="Foto do Bruno do Amaral" />
-    <h3>Bruno do Amaral</h3>
-    <p>Cargo: Web developer.</p>
-    <p>Descrição: Desenvolvedor web de nosso blog.</p>
+  <div class="d-flex gap-2">
+    {% include team-member.html name='Bruno do Amaral' headline='Web developer'
+    role='Desenvolvedor web de nosso blog'
+    image_url='https://media.licdn.com/dms/image/C4D03AQEZ7g6bMFVDyg/profile-displayphoto-shrink_800_800/0/1623178761223?e=1700092800&v=beta&t=fS1hGvLWHmeTZ5wXbj7MzT45_kRRvPHsqZxWgGQP1SQ'
+    %}<!---->
+    {% include team-member.html name='Guilherme Milék' headline='Deus do HTML e
+    CSS' role='Simplesmente o deus da web de nosso blog'
+    image_url='https://media.licdn.com/dms/image/D4D03AQF9__QIsPgskg/profile-displayphoto-shrink_800_800/0/1687914739156?e=1700092800&v=beta&t=Wl61zcA8A8N8aGkvNIbj38exdOyM17mLjWqctnVDv9g'
+    %}<!---->
+    {% include team-member.html name='Ricardo Augusto Franco' headline='Pior
+    desenvolvedor web da história' role='O pior desenvolvedor web que nosso blog
+    poderia ter'
+    image_url='https://media.licdn.com/dms/image/C4D03AQGCzlbjWh9sew/profile-displayphoto-shrink_800_800/0/1549985524380?e=1700092800&v=beta&t=i8d-96W2xqGtFwxZzYv5WhapxdMVoGydJMD4uezTtdU'
+    %}<!---->
   </div>
-
-  <div class="team-member">
-    <img src="URL_DA_IMAGEM_MEMBRO_2" alt="Foto do Guilherme Preveda Milék" />
-    <h3>Guilherme Milék</h3>
-    <p>Cargo: Deus do html e css.</p>
-    <p>Descrição: Simplesmente o deus da web de nosso blog.</p>
-  </div>
-
-  <div class="team-member">
-    <img src="URL_DA_IMAGEM_MEMBRO_3" alt="Foto do Ricardo Augusto Franco" />
-    <h3>Ricardo Augusto Franco</h3>
-    <p>Cargo: Pior desenvolvedor web da história.</p>
-    <p>Descrição: O pior desenvolvedor web que nosso blog poderia ter.</p>
-  </div>
-</div>
+</section>
 
 <hr />
 
