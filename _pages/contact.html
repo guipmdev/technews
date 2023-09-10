@@ -1,7 +1,58 @@
 ---
 layout: default
 title: Contato
-order: 2
+permalink: /contact
 ---
 
-<div>Content</div>
+<h2>Entre em Contato</h2>
+
+<p>Para entrar em contato conosco, preencha o formulário abaixo:</p>
+
+<form
+  action="{{ '/_api/processaContato.php' | absolute_url }}"
+  method="POST"
+  enctype="multipart/form-data"
+>
+  <label for="nome">Nome:</label>
+  <input type="text" id="nome" name="nome" required /><br /><br />
+
+  <label for="email">E-mail:</label>
+  <input type="email" id="email" name="email" required /><br /><br />
+
+  <label for="mensagem">Mensagem:</label><br />
+  <textarea id="mensagem" name="mensagem" rows="4" required></textarea
+  ><br /><br />
+
+  <input type="submit" name="acao" value="Enviar" />
+</form>
+
+<div>
+  <h2>Nossa Equipe</h2>
+
+  <span>Conheça a equipe talentosa por trás da nossa organização.</span>
+
+  <div class="team-member">
+    <img src="URL_DA_IMAGEM_MEMBRO_1" alt="Foto do Bruno do Amaral" />
+    <h3>Bruno do Amaral</h3>
+    <p>Cargo: Web developer.</p>
+    <p>Descrição: Desenvolvedor web de nosso blog.</p>
+  </div>
+
+  <div class="team-member">
+    <img src="URL_DA_IMAGEM_MEMBRO_2" alt="Foto do Guilherme Preveda Milék" />
+    <h3>Guilherme Milék</h3>
+    <p>Cargo: Deus do html e css.</p>
+    <p>Descrição: Simplesmente o deus da web de nosso blog.</p>
+  </div>
+
+  <div class="team-member">
+    <img src="URL_DA_IMAGEM_MEMBRO_3" alt="Foto do Ricardo Augusto Franco" />
+    <h3>Ricardo Augusto Franco</h3>
+    <p>Cargo: Pior desenvolvedor web da história.</p>
+    <p>Descrição: O pior desenvolvedor web que nosso blog poderia ter.</p>
+  </div>
+</div>
+
+<hr />
+
+{% include newsletter.html %}
