@@ -1,5 +1,5 @@
 {% capture image_path %}assets/images/posts/{{include.post.cover_image}}{%
-endcapture %} {% capture category_name %}{{post.category}}{% endcapture %}
+endcapture %}
 
 <li class="post-card {{include.type}} overflow-hidden">
   <div class="d-flex">
@@ -18,7 +18,7 @@ endcapture %} {% capture category_name %}{{post.category}}{% endcapture %}
 
       <p>{{ post.excerpt }}</p>
 
-      {% include category.html text=category_name %}
+      {% include category.html text=post.category %}
 
       <div class="social-buttons d-flex gap-4">
         {% include social-button.html title='Compartilhar' icon='share'
