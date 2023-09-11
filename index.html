@@ -1,25 +1,67 @@
 ---
 layout: default
 title: Página inicial
-permalink: /
+pagination:
+  enabled: true
+  per_page: 7
 ---
 
 <section class="d-flex flex-column" style="padding: 0.75rem 0; gap: 2rem">
   <h2 class="title-1 text-align-center">Em destaque</h2>
-
-  {% for post in site.posts limit: 1 %} {% include post-card.html post=post %}
+  <!-- prettier-ignore -->
+  {% for post in site.posts limit:1 %}
+    {% include post-card.html post=post %}
   {% endfor %}
 </section>
 
 {% include newsletter.html %}
 
+<!-- prettier-ignore -->
+{% if paginator.page %}
+  {% assign currentPage = paginator.page %}
+{% else %}
+  {% assign currentPage = 1 %}
+{% endif %}
+
+{% if paginator.page > 1 %}
+  {% assign offset = 0 %}
+{% else %}
+  {% assign offset = 1 %}
+  {% endif %}
+
+{% assign limit = paginator.per_page | minus:1 %}
+
 <section class="d-flex flex-column" style="padding: 0.75rem 0; gap: 2rem">
   <h2 class="title-1">Outros posts</h2>
 
   <div class="d-flex flex-column align-items-center gap-4">
-    <ol class="posts-grid d-grid gap-4">
-      {% for post in site.posts offset: 1 %} {% include post-card.html post=post
-      type='no-excerpt' %} {% endfor %}
+    <ol
+      class="posts-grid post-listing d-grid gap-4"
+      data-page="{{ currentPage }}"
+      data-totalPages="{{ paginator.total_pages }}"
+    >
+      <!-- prettier-ignore -->
+
+      {% for post in paginator.posts limit:limit  offset:offset %}
+      <li>{% include post-card.html type='no-excerpt' post=post %}</li>
+      {% endfor %}
     </ol>
   </div>
 </section>
+
+<!-- prettier-ignore -->
+{% assign postCount = paginator.total_posts %}
+{% assign postsCovered = paginator.per_page | plus:offset | times:paginator.page %}
+
+{% if postsCovered < postCount %}
+  {% include button.html
+    style='secondary'
+    text='Carregar mais'
+    button_type='load-more'
+    align='center'
+  %}
+{% endif %}
+
+<!-- <p>{{offset}}</p>
+<p>{{postCount}}</p>
+<p>{{postsCovered}}</p> -->
