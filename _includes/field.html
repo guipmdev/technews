@@ -1,34 +1,44 @@
-{% if include.label_position %}<!---->
-{% capture label_position %}{{include.label_position}}-label{% endcapture %}<!---->
-{% else %}<!---->
-{% capture label_position %}{% endcapture %}<!---->
+<!-- prettier-ignore -->
+{% if include.label_position %}
+  {% capture label_position %}{{include.label_position}}-label{% endcapture %}
+{% else %}
+  {% capture label_position %}{% endcapture %}
 {% endif %}
 
-<!-- ========== -->
-
-{% if include.invalid %}<!---->
-{% capture invalid %}invalid{% endcapture %}<!---->
-{% else %}<!---->
-{% capture invalid %}{% endcapture %}<!---->
+<!-- prettier-ignore -->
+{% if include.invalid %}
+  {% capture invalid %}invalid{% endcapture %}
+{% else %}
+  {% capture invalid %}{% endcapture %}
 {% endif %}
 
-<!-- ========== -->
-
-{% if include.required %}<!---->
-{% capture required %}required{% endcapture %}<!---->
-{% else %}<!---->
-{% capture required %}{% endcapture %}<!---->
+<!-- prettier-ignore -->
+{% if include.required %}
+  {% capture required %}required{% endcapture %}
+{% else %}
+  {% capture required %}{% endcapture %}
 {% endif %}
 
 <div
   class="field d-flex w-100 {{label_position}} {{invalid}} {{required}}"
   style="gap: 0.375rem"
 >
-  <div class="label d-flex align-items-center text-nowrap" style="gap: 0.25rem">
-    <label {% if include.name %} for="{{include.name}}" {% endif %}
-      >{{include.label | default: 'Label'}}</label
+  <div class="label d-flex align-items-center text-nowrap gap-1">
+    <!-- prettier-ignore -->
+    <label 
+      {% if include.name %}
+        for="{{include.name}}"
+      {% endif %}
     >
-    <span class="body-1 required-asterisk">*</span>
+      {{include.label | default: 'Label'}}
+    </label>
+
+    <span
+      class="body-1 required-asterisk"
+      style="color: var(--status-danger-1)"
+    >
+      *
+    </span>
   </div>
 
   <div class="input-container d-flex flex-column w-100" style="gap: 0.375rem">
@@ -36,52 +46,49 @@
       class="input position-relative overflow-hidden h-100"
       style="border-radius: 0.25rem"
     >
-      {% if include.type == 'textarea' %}<!---->
+      {% if include.type == 'textarea' %}
+      <!-- prettier-ignore -->
       <textarea
+        class="body-1 w-100 border-radius-sm"
+        style="
+          background-color: var(--neutral-grey-16);
+
+          padding: 0.3125rem 0.75rem 0.4375rem;
+        "
         placeholder="{{include.placeholder | default: ''}}"
-        class="body-1 w-100"
-        {%
-        if
-        include.name
-        %}
-        name="{{include.name}}"
-        id="{{include.name}}"
-        {%
-        endif
-        %}
-        {%
-        if
-        include.name
-        %}
-        for="{{include.name}}"
-        {%
-        endif
-        %}
+
+        {% if required %}
+          required
+        {% endif %}
+
+        {% if include.name %}
+          id="{{include.name}}"
+          name="{{include.name}}"
+        {% endif %}
       ></textarea>
-      {% else %}<!---->
+      {% else %}
+      <!-- prettier-ignore -->
       <input
+        class="body-1 w-100 h-100 border-radius-sm"
+        style="
+          background-color: var(--neutral-grey-16);
+
+          padding: 0.3125rem 0.75rem 0.4375rem;
+        "
         type="{{include.type | default: 'text'}}"
         placeholder="{{include.placeholder | default: ''}}"
-        class="body-1 w-100 h-100"
-        {%
-        if
-        required
-        %}
-        required
-        {%
-        endif
-        %}
-        {%
-        if
-        include.name
-        %}
-        id="{{include.name}}"
-        name="{{include.name}}"
-        {%
-        endif
-        %}
+
+        {% if required %}
+          required
+        {% endif %}
+
+        {% if include.name %}
+          id="{{include.name}}"
+          name="{{include.name}}"
+        {% endif %}
       />
       {% endif %}
+
       <div
         class="indicators position-absolute start-0 bottom-0 d-flex flex-column align-items-center w-100"
       >
@@ -91,18 +98,17 @@
     </div>
 
     <div
-      class="caption-1 status-text align-items-center"
-      style="gap: 0.25rem; padding-top: 0.125rem"
+      class="caption-1 status-text align-items-center gap-1"
+      style="padding-top: 0.125rem"
     >
       <img
+        style="width: 0.75rem; height: 0.75rem; padding-top: 0.125rem"
         src="{{'/assets/images/icons/information-circle.svg' | absolute_url}}"
         alt=""
-        style="width: 0.75rem; height: 0.75rem; padding-top: 0.125rem"
       />
-      <span
-        >{{include.status_text | default: 'O valor desse campo é inválido!'
-        }}</span
-      >
+      <span>
+        {{include.status_text | default: 'O valor desse campo é inválido!'}}
+      </span>
     </div>
   </div>
 </div>
