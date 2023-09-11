@@ -1,7 +1,9 @@
-{% capture image_path %}assets/images/posts/{{include.post.cover_image}}{%
-endcapture %}
+<!-- prettier-ignore -->
+{% capture image_path %}assets/images/posts/{{include.post.cover_image}}{% endcapture %}
 
-<li class="post-card {{include.type}} overflow-hidden w-100">
+<li
+  class="post-card position-relative overflow-hidden w-100 rounded-3 {{include.type}}"
+>
   <div class="d-flex">
     <div class="image-cover overflow-hidden position-relative">
       <img
@@ -11,9 +13,25 @@ endcapture %}
       />
     </div>
 
-    <div class="post-infos d-flex flex-column flex-grow-1">
-      <h3 class="title-3">
-        <a href="{{include.post.url | absolute_url}}">{{include.post.title}}</a>
+    <div
+      class="post-infos d-flex flex-column flex-grow-1"
+      style="padding: 0.75rem; gap: 0.75rem"
+    >
+      <h3
+        class="title-3 overflow-hidden"
+        style="
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          line-clamp: 3;
+          -webkit-box-orient: vertical;
+        "
+      >
+        <a
+          class="no-hover text-decoration-none"
+          href="{{include.post.url | absolute_url}}"
+        >
+          {{include.post.title}}
+        </a>
       </h3>
 
       <p>{{ post.excerpt }}</p>
@@ -21,11 +39,25 @@ endcapture %}
       {% include category.html text=post.category %}
 
       <div class="social-buttons d-flex gap-4">
-        {% include social-button.html title='Compartilhar' icon='share'
-        type='share' identifier=image_path %} {% include social-button.html
-        title='Curtir' icon='heart' type='like' identifier=image_path %} {%
-        include social-button.html title='Salvar' icon='bookmark' type='save'
-        identifier=image_path %}
+        <!-- prettier-ignore -->
+        {% include social-button.html
+          type='share'
+          identifier=image_path
+          title='Compartilhar'
+          icon='share'
+        %}
+        {% include social-button.html
+          type='like'
+          identifier=image_path
+          title='Curtir'
+          icon='heart'
+        %}
+        {% include social-button.html
+          type='save'
+          identifier=image_path
+          title='Salvar'
+          icon='bookmark'
+        %}
       </div>
     </div>
   </div>

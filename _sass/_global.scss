@@ -60,6 +60,10 @@ textarea {
   padding: 0 3rem;
 }
 
+img:not(.no-background-color) {
+  background-color: var(--grey-8);
+}
+
 .utterances {
   max-width: 100%;
 }
