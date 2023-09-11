@@ -4,8 +4,8 @@
 
     transition: opacity 0.2s;
 
-    -webkit-filter: grayscale(100%) brightness(1000%);
-    filter: grayscale(100%) brightness(1000%);
+    -webkit-filter: grayscale(10) brightness(10);
+    filter: grayscale(1) brightness(10);
   }
 
   &:hover > div > img:last-of-type {
@@ -20,8 +20,8 @@
     & > img:last-of-type {
       opacity: 1;
 
-      -webkit-filter: grayscale(0%) brightness(100%);
-      filter: grayscale(0%) brightness(100%);
+      -webkit-filter: grayscale(0) brightness(1);
+      filter: grayscale(0) brightness(1);
     }
   }
 }
