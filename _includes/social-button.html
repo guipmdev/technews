@@ -1,7 +1,6 @@
-{% capture regular_icon_path
-%}assets/images/icons/{{include.icon}}-regular.svg{% endcapture %} {% capture
-filled_icon_path %}assets/images/icons/{{include.icon}}-filled.svg{% endcapture
-%}
+<!-- prettier-ignore -->
+{% capture regular_icon_path %}assets/images/icons/{{include.icon}}-regular.svg{% endcapture %}
+{% capture filled_icon_path %}assets/images/icons/{{include.icon}}-filled.svg{% endcapture %}
 
 <button
   class="social-button position-relative"
@@ -11,14 +10,14 @@ filled_icon_path %}assets/images/icons/{{include.icon}}-filled.svg{% endcapture
 >
   <div class="position-relative" style="width: 1rem; height: 1rem">
     <img
+      class="no-background-color w-100 h-100"
       src="{{regular_icon_path | absolute_url}}"
       alt=""
-      class="w-100 h-100"
     />
     <img
+      class="no-background-color position-absolute top-0 start-0 w-100 h-100"
       src="{{filled_icon_path | absolute_url}}"
       alt=""
-      class="position-absolute top-0 start-0 w-100 h-100"
     />
   </div>
 </button>

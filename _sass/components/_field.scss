@@ -3,24 +3,18 @@
 
   & > .label > .required-asterisk {
     display: none;
-
-    color: #dc626d;
   }
 
   & > .input-container {
     & > .input {
       & > input,
       & > textarea {
-        background-color: #292929;
-
-        padding: 0.3125rem 0.75rem 0.4375rem;
-        border: 1px solid #666666;
-        border-radius: 0.25rem;
+        border: 1px solid var(--grey-40);
 
         transition: border-color 0.2s;
 
         &::placeholder {
-          color: #5c5c5c;
+          color: var(--grey-60);
         }
 
         &:focus ~ .indicators {
@@ -32,7 +26,7 @@
           & > .underline {
             height: 2px;
 
-            background-color: #bdbdbd;
+            background-color: var(--grey-74);
           }
         }
       }
@@ -46,7 +40,7 @@
           width: 0;
           height: 0;
 
-          background-color: #479ef5;
+          background-color: var(--brand-100);
 
           transition: width 0.2s, height 0.2s;
         }
@@ -54,7 +48,7 @@
         & > .underline {
           height: 1px;
 
-          background-color: #adadad;
+          background-color: var(--grey-68);
 
           transition: height 0.2s, background-color 0.2s;
         }
@@ -64,7 +58,7 @@
     & > .status-text {
       display: none;
 
-      color: #dc626d;
+      color: var(--status-danger-1);
     }
   }
 
@@ -80,7 +74,7 @@
   &.invalid > .input-container > .input > textarea,
   form.invalid > & > .input-container > .input > textarea:invalid,
   form.invalid > & > .input-container > .input > input:invalid {
-    border-color: #dc626d;
+    border-color: var(--status-danger-1);
 
     & ~ .status-text {
       display: flex;
