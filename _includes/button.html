@@ -1,0 +1,21 @@
+{% if include.responsive %}<!---->
+{% capture responsive %}responsive{% endcapture %}<!---->
+{% else %}<!---->
+{% capture responsive %}{% endcapture %}<!---->
+{% endif %}
+
+<button
+  class="button body-1-strong {{include.style}} {{include.width}} {{responsive}}"
+  {%
+  if
+  include.name
+  %}
+  name="{{include.name}}"
+  id="{{include.name}}"
+  {%
+  endif
+  %}
+  type="{{include.type | default: 'submit'}}"
+>
+  {{include.text | default: 'Text'}}
+</button>

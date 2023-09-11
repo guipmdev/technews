@@ -1,0 +1,40 @@
+---
+layout: with-newsletter
+---
+
+{% capture image_path %}assets/images/posts/{{page.cover_image}}{% endcapture %}
+
+<div class="d-flex flex-column gap-2">
+  <h2 class="title-1">{{ page.title }}</h2>
+
+  <p class="subtitle-2">
+    <strong
+      >Publicado por {{page.author}} em {{page.date | date: "%d/%m/%y"}}</strong
+    >
+  </p>
+</div>
+
+{% include category.html text=page.category %}
+
+<img
+  src="{{image_path | absolute_url}}"
+  alt=""
+  style="width: 100%; height: 300px; object-fit: cover"
+  class="rounded-2"
+/>
+
+<article class="d-flex flex-column gap-4">{{content}}</article>
+
+<section class="d-flex flex-column gap-3">
+  <h3 class="title-3">Comentários</h3>
+
+  <script
+    src="https://utteranc.es/client.js"
+    repo="guilhermeprevedamilek/blog-html-e-bootstrap"
+    issue-term="pathname"
+    label="Comment"
+    theme="photon-dark"
+    crossorigin="anonymous"
+    async
+  ></script>
+</section>

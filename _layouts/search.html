@@ -1,0 +1,16 @@
+---
+layout: with-newsletter
+---
+
+{% assign filteredPosts = site.posts | where: "category", page.category %}
+
+<section class="d-flex flex-column" style="padding: 0.75rem 0; gap: 2rem">
+  <h2 class="title-1">
+    Artigos com a categoria "{{page.category | capitalize}}"
+  </h2>
+
+  <div class="d-flex flex-column align-items-center gap-4">
+    {% for post in filteredPosts %} {% include post-card.html post=post
+    type='search' %} {% endfor %}
+  </div>
+</section>

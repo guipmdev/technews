@@ -1,0 +1,32 @@
+{% capture image_path %}assets/images/posts/{{include.post.cover_image}}{%
+endcapture %}
+
+<li class="post-card {{include.type}} overflow-hidden w-100">
+  <div class="d-flex">
+    <div class="image-cover overflow-hidden position-relative">
+      <img
+        src="{{image_path | absolute_url}}"
+        alt=""
+        class="position-absolute w-100 h-100 object-fit-cover"
+      />
+    </div>
+
+    <div class="post-infos d-flex flex-column flex-grow-1">
+      <h3 class="title-3">
+        <a href="{{include.post.url | absolute_url}}">{{include.post.title}}</a>
+      </h3>
+
+      <p>{{ post.excerpt }}</p>
+
+      {% include category.html text=post.category %}
+
+      <div class="social-buttons d-flex gap-4">
+        {% include social-button.html title='Compartilhar' icon='share'
+        type='share' identifier=image_path %} {% include social-button.html
+        title='Curtir' icon='heart' type='like' identifier=image_path %} {%
+        include social-button.html title='Salvar' icon='bookmark' type='save'
+        identifier=image_path %}
+      </div>
+    </div>
+  </div>
+</li>

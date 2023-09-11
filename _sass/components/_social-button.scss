@@ -1,0 +1,27 @@
+.social-button {
+  & > div > img:last-of-type {
+    opacity: 0;
+
+    transition: opacity 0.2s;
+
+    -webkit-filter: grayscale(100%) brightness(1000%);
+    filter: grayscale(100%) brightness(1000%);
+  }
+
+  &:hover > div > img:last-of-type {
+    opacity: 1;
+  }
+
+  &.active > div {
+    & > img:first-of-type {
+      opacity: 0;
+    }
+
+    & > img:last-of-type {
+      opacity: 1;
+
+      -webkit-filter: grayscale(0%) brightness(100%);
+      filter: grayscale(0%) brightness(100%);
+    }
+  }
+}
