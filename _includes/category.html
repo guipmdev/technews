@@ -5,9 +5,7 @@
   class="category d-flex align-items-center rounded-pill {{include.type}}"
   style="width: fit-content"
 >
-  <img style="width: auto" src="{{emoji_path | absolute_url}}" alt="" />
+  <img class="w-auto" src="{{emoji_path | absolute_url}}" alt="" />
 
-  <span class="body-2 text-nowrap" style="text-transform: capitalize">
-    {{ include.text }}
-  </span>
+  <span class="body-2 text-nowrap text-capitalize">{{ include.text }}</span>
 </div>
