@@ -7,8 +7,12 @@
 
 <!-- prettier-ignore -->
 <button
-  class="button body-1-strong rounded-1 {{include.style}} {{include.width}} {{responsive}}"
-  type="{{include.type | default: 'submit'}}"
+  class="button body-1-strong rounded-1 {{include.style}} {{include.width}} {{include.align}} {{responsive}}"
+  type="{{include.type | default: 'button'}}"
+
+  {% if include.button_type %}
+    data-button-type="{{include.button_type}}"
+  {% endif %}
 
   {% if include.name %}
     id="{{include.name}}"
