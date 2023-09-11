@@ -1,7 +1,15 @@
-{% capture emoji_path %}assets/images/emojis/{{include.text}}.png{% endcapture
-%}
+<!-- prettier-ignore -->
+{% capture emoji_path %}assets/images/emojis/{{include.text}}.png{% endcapture %}
 
-<div class="category d-flex align-items-center rounded-pill {{include.type}}">
-  <img src="{{emoji_path | absolute_url}}" alt="" />
-  <span class="body-2 text-nowrap">{{ include.text }}</span>
+<div
+  class="category d-flex align-items-center rounded-pill {{include.type}}"
+  style="width: fit-content"
+>
+  <img
+    class="no-background-color w-auto"
+    src="{{emoji_path | absolute_url}}"
+    alt=""
+  />
+
+  <span class="body-2 text-nowrap text-capitalize">{{ include.text }}</span>
 </div>

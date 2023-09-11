@@ -17,10 +17,10 @@ layout: with-newsletter
 {% include category.html text=page.category %}
 
 <img
+  class="border-radius"
+  style="width: 100%; height: 300px; object-fit: cover"
   src="{{image_path | absolute_url}}"
   alt=""
-  style="width: 100%; height: 300px; object-fit: cover"
-  class="rounded-2"
 />
 
 <article class="d-flex flex-column gap-4">{{content}}</article>

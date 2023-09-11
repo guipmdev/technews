@@ -21,8 +21,19 @@ li {
 }
 
 a {
-  color: #ffffff;
-  text-decoration: none;
+  color: var(--grey-84);
+
+  &:not(.no-hover) {
+    transition: color 0.2s;
+
+    &:hover {
+      color: var(--brand-100);
+    }
+  }
+
+  &.disabled {
+    color: var(--grey-60);
+  }
 }
 
 *:focus {
@@ -47,6 +58,10 @@ textarea {
   margin: 0 auto;
 
   padding: 0 3rem;
+}
+
+img:not(.no-background-color) {
+  background-color: var(--grey-8);
 }
 
 .utterances {
