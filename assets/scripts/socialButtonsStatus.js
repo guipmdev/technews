@@ -1,4 +1,4 @@
-import { getMyPosts } from './myPosts.js'
+import { getMyPosts } from './posts.js'
 
 export function updateSocialButtonsStatus() {
   const myPosts = getMyPosts()
