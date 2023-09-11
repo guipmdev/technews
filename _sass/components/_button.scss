@@ -11,11 +11,13 @@
   }
 
   &.disabled {
+    width: 100%;
+  }
+
+  &.disabled {
     background-color: var(--grey-8);
 
     color: var(--grey-60);
-
-    cursor: not-allowed;
   }
 
   &.secondary {
@@ -52,10 +54,6 @@
     &.disabled {
       color: var(--grey-60);
     }
-  }
-
-  &.center {
-    margin: 0 auto;
   }
 
   &.responsive {
