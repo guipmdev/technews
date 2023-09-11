@@ -1,6 +1,8 @@
-import myPosts from './index'
+import { getMyPosts } from './myPosts.js'
 
 export function updateSocialButtonsStatus() {
+  const myPosts = getMyPosts()
+
   const socialButtons = document.querySelectorAll(
     'button[data-button-type="like"], button[data-button-type="save"]',
   )

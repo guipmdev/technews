@@ -11,10 +11,11 @@
     <nav>
       <ul class="d-flex overflow-x-auto">
         {% for category in site.categories %} {% capture category_name
-        %}{{category[0]}}{% endcapture %}
+        %}{{category[0]}}{% endcapture %} {% capture search_path
+        %}/search/{{category_name}}{% endcapture %}
 
         <li>
-          <a href="#"
+          <a href="{{search_path | absolute_url}}"
             >{% include category.html type="clickable" text=category_name %}</a
           >
         </li>

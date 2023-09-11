@@ -49,6 +49,10 @@ textarea {
   padding: 0 3rem;
 }
 
+.utterances {
+  max-width: 100%;
+}
+
 @media (max-width: 640px) {
   html {
     font-size: 87.5%;
