@@ -23,18 +23,16 @@ li {
 a {
   color: var(--grey-84);
 
-  transition: color 0.2s;
+  &:not(.no-hover) {
+    transition: color 0.2s;
 
-  &:hover {
-    color: var(--brand-100);
+    &:hover {
+      color: var(--brand-100);
+    }
   }
 
   &.disabled {
     color: var(--grey-60);
-  }
-
-  &.no-hover:hover {
-    color: initial;
   }
 }
 
