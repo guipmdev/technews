@@ -27,6 +27,7 @@ baseurl: "/blog-html-e-bootstrap" # place folder name if the site is served in a
 
 # Build settings
 plugins:
+  - jekyll-paginate-v2
   - jekyll-feed
 
 # Exclude from processing.
@@ -36,8 +37,6 @@ plugins:
 #
 # Excluded items can be processed by explicitly listing the directories or
 # their entries' file path in the `include:` list.
-gems:
-  - jekyll-paginate-v2
 # exclude:
 #   - .sass-cache/
 #   - .jekyll-cache/
