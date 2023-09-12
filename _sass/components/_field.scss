@@ -9,6 +9,7 @@
     & > .input {
       & > input,
       & > textarea {
+        height: 100%;
         border: 1px solid var(--grey-40);
 
         transition: border-color 0.2s;
@@ -17,16 +18,20 @@
           color: var(--grey-60);
         }
 
-        &:focus ~ .indicators {
-          & > .in-focus {
-            height: 2px;
-            width: 100%;
-          }
+        &:focus {
+          outline: none;
 
-          & > .underline {
-            height: 2px;
+          & ~ .indicators {
+            & > .in-focus {
+              height: 2px;
+              width: 100%;
+            }
 
-            background-color: var(--grey-74);
+            & > .underline {
+              height: 2px;
+
+              background-color: var(--grey-74);
+            }
           }
         }
       }
