@@ -1,0 +1,30 @@
+---
+layout: with-newsletter
+---
+
+<section class="d-flex flex-column" style="padding: 0.75rem 0; gap: 2rem">
+  <h2 class="title-1">
+    Artigos com a categoria "{{page.category | capitalize}}"
+  </h2>
+
+  <ol
+    class="post-listing d-flex flex-column align-items-center gap-4"
+    data-page="{{ paginator.page }}"
+    data-totalPages="{{ paginator.total_pages }}"
+  >
+    <!-- prettier-ignore -->
+    {% for post in paginator.posts %}
+    <li>{% include post-card.html type='search' post=post %}</li>
+    {% endfor %}
+  </ol>
+</section>
+
+<!-- prettier-ignore -->
+{% if paginator.next_page %}
+  {% include button.html
+    style='secondary'
+    text='Carregar mais'
+    button_type='load-more'
+    align='center'
+  %}
+{% endif %}
