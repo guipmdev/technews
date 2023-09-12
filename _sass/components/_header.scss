@@ -18,8 +18,12 @@ header > div > nav {
   }
 
   @media (min-width: 1280px) {
-    & > ul {
-      padding: 3px calc((100vw - 1280px) / 2 + 3rem + 3px);
+    & {
+      width: calc(100%);
+
+      & > ul {
+        padding: 3px 0;
+      }
     }
   }
 }
