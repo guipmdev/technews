@@ -25,7 +25,9 @@ title: Página inicial
       <!-- prettier-ignore -->
 
       {% for post in paginator.posts %}
-      <li>{% include post-card.html type='no-excerpt' post=post %}</li>
+      <li class="w-100">
+        {% include post-card.html type='no-excerpt' post=post %}
+      </li>
       {% endfor %}
     </ol>
   </div>
