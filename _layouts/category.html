@@ -2,13 +2,6 @@
 layout: with-newsletter
 ---
 
-<!-- prettier-ignore -->
-{% if paginator.page %}
-  {% assign currentPage = paginator.page %}
-{% else %}
-  {% assign currentPage = 1 %}
-{% endif %}
-
 <section class="d-flex flex-column" style="padding: 0.75rem 0; gap: 2rem">
   <h2 class="title-1">
     Artigos com a categoria "{{page.category | capitalize}}"
@@ -16,21 +9,18 @@ layout: with-newsletter
 
   <ol
     class="post-listing d-flex flex-column align-items-center gap-4"
-    data-page="{{ currentPage }}"
+    data-page="{{ paginator.page }}"
     data-totalPages="{{ paginator.total_pages }}"
   >
     <!-- prettier-ignore -->
-    {% for post in paginator.posts limit:paginator.per_page %}
+    {% for post in paginator.posts %}
     <li>{% include post-card.html type='search' post=post %}</li>
     {% endfor %}
   </ol>
 </section>
 
 <!-- prettier-ignore -->
-{% assign postCount = paginator.total_posts %}
-{% assign postsCovered = paginator.per_page %}
-
-{% if postsCovered < postCount %}
+{% if paginator.next_page %}
   {% include button.html
     style='secondary'
     text='Carregar mais'
