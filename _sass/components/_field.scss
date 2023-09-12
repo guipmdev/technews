@@ -1,0 +1,87 @@
+.field {
+  flex-direction: column;
+
+  & > .label > .required-asterisk {
+    display: none;
+  }
+
+  & > .input-container {
+    & > .input {
+      & > input,
+      & > textarea {
+        border: 1px solid var(--grey-40);
+
+        transition: border-color 0.2s;
+
+        &::placeholder {
+          color: var(--grey-60);
+        }
+
+        &:focus ~ .indicators {
+          & > .in-focus {
+            height: 2px;
+            width: 100%;
+          }
+
+          & > .underline {
+            height: 2px;
+
+            background-color: var(--grey-74);
+          }
+        }
+      }
+
+      & > textarea {
+        min-height: 2.125rem;
+      }
+
+      & > .indicators {
+        & > .in-focus {
+          width: 0;
+          height: 0;
+
+          background-color: var(--brand-100);
+
+          transition: width 0.2s, height 0.2s;
+        }
+
+        & > .underline {
+          height: 1px;
+
+          background-color: var(--grey-68);
+
+          transition: height 0.2s, background-color 0.2s;
+        }
+      }
+    }
+
+    & > .status-text {
+      display: none;
+
+      color: var(--status-danger-1);
+    }
+  }
+
+  &.left-label {
+    flex-direction: column;
+
+    @media (min-width: 640px) {
+      flex-direction: row;
+    }
+  }
+
+  &.invalid > .input-container > .input > input,
+  &.invalid > .input-container > .input > textarea,
+  form.invalid > & > .input-container > .input > textarea:invalid,
+  form.invalid > & > .input-container > .input > input:invalid {
+    border-color: var(--status-danger-1);
+
+    & ~ .status-text {
+      display: flex;
+    }
+  }
+
+  &.required > .label > .required-asterisk {
+    display: initial;
+  }
+}

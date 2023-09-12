@@ -1,0 +1,30 @@
+<header class="mw-100" style="background-color: var(--neutral-grey-16)">
+  <div
+    class="content d-flex flex-column justify-content-center align-items-center"
+    style="min-height: 10.375rem"
+  >
+    <div class="d-flex align-items-center" style="height: 5.5rem">
+      <a class="no-hover text-decoration-none" href="{{'/' | absolute_url}}">
+        <h1 class="large-title text-uppercase" style="color: var(--white)">
+          TECHNEWS
+        </h1>
+      </a>
+    </div>
+
+    <nav>
+      <ul class="d-flex overflow-x-auto" style="gap: 0.75rem">
+        {% for category in site.categories %}
+        <!-- prettier-ignore -->
+        {% capture category_name %}{{category[0]}}{% endcapture %}
+        {% capture search_path %}/search/{{category_name}}{% endcapture %}
+
+        <li>
+          <a class="text-decoration-none" href="{{search_path | absolute_url}}">
+            {% include category.html type="clickable" text=category_name %}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>

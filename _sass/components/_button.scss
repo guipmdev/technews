@@ -1,0 +1,64 @@
+.button {
+  width: fit-content;
+  height: fit-content;
+
+  background-color: var(--brand-70);
+
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: var(--brand-80);
+  }
+
+  &.disabled {
+    width: 100%;
+  }
+
+  &.disabled {
+    background-color: var(--grey-8);
+
+    color: var(--grey-60);
+  }
+
+  &.secondary {
+    background-color: var(--neutral-grey-16);
+
+    border: 1px solid var(--grey-40);
+
+    transition: background-color 0.2s, border-color 0.2s;
+
+    &:hover {
+      background-color: var(--grey-24);
+
+      border-color: var(--grey-46);
+    }
+
+    &.disabled {
+      border-color: var(--grey-60);
+
+      color: var(--grey-28);
+    }
+  }
+
+  &.text {
+    background-color: transparent;
+
+    color: var(--grey-84);
+
+    transition: color 0.2s;
+
+    &:hover {
+      color: var(--brand-100);
+    }
+
+    &.disabled {
+      color: var(--grey-60);
+    }
+  }
+
+  &.responsive {
+    @media (max-width: 640px) {
+      width: 100%;
+    }
+  }
+}

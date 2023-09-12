@@ -1,0 +1,16 @@
+article {
+  & img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  figcaption {
+    color: #adadad;
+    text-align: center;
+  }
+
+  & > span {
+    font-style: italic;
+    font-weight: bold;
+  }
+}
