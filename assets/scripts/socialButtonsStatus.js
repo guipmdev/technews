@@ -21,11 +21,14 @@ export function updateSocialButtonsStatus(container = document) {
         button.classList.remove('active')
 
         const postToRemoveIndex = respectivePostList.indexOf(postIdentifier)
-        respectivePostList.splice(postToRemoveIndex, 1)
+        if (postToRemoveIndex > -1) {
+          respectivePostList.splice(postToRemoveIndex, 1)
+        }
       } else {
         button.classList.add('active')
-
-        respectivePostList.push(postIdentifier)
+        if (!respectivePostList.includes(postIdentifier)) {
+          respectivePostList.push(postIdentifier)
+        }
       }
 
       localStorage.setItem(
