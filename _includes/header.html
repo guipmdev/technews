@@ -1,7 +1,6 @@
 <header class="mw-100" style="background-color: var(--neutral-grey-16)">
   <div
     class="content d-flex flex-column justify-content-center align-items-center"
-    style="min-height: 10.375rem"
   >
     <div class="d-flex align-items-center" style="height: 5.5rem">
       <a class="no-hover text-decoration-none" href="{{'/' | absolute_url}}">
@@ -10,7 +9,14 @@
         </h1>
       </a>
     </div>
+  </div>
+</header>
 
+<div
+  class="navbar sticky-top mw-100"
+  style="background-color: var(--neutral-grey-16); margin-top: -2rem"
+>
+  <div class="content d-flex justify-content-center align-items-center">
     <nav>
       <ul class="d-flex overflow-x-auto" style="gap: 0.75rem">
         {% for category in site.categories %}
@@ -30,4 +36,4 @@
       </ul>
     </nav>
   </div>
-</header>
+</div>
