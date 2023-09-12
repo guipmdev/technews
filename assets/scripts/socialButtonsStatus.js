@@ -1,9 +1,9 @@
 import { getMyPosts } from './posts.js'
 
-export function updateSocialButtonsStatus() {
+export function updateSocialButtonsStatus(container = document) {
   const myPosts = getMyPosts()
 
-  const socialButtons = document.querySelectorAll(
+  const socialButtons = container.querySelectorAll(
     'button[data-button-type="like"], button[data-button-type="save"]',
   )
 
