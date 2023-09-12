@@ -15,45 +15,53 @@ export function loadMorePosts() {
   )
 
   loadMoreButtons.forEach((button) => {
-    const postsContainer = document.querySelector('.post-listing')
+    button.addEventListener('click', handleLoadMorePosts)
+  })
+}
 
-    button.addEventListener('click', async (event) => {
-      const clickedButton = event.currentTarget
+async function handleLoadMorePosts(event) {
+  const clickedButton = event.currentTarget
 
-      const nextPage = parseInt(postsContainer.getAttribute('data-page')) + 1
-      const totalPages = parseInt(
-        postsContainer.getAttribute('data-totalPages'),
-      )
+  clickedButton.classList.add('disabled')
+  clickedButton.removeEventListener('click', handleLoadMorePosts)
 
-      clickedButton.classList.add('disabled')
+  const postsContainer = document.querySelector('.post-listing')
 
-      const requestUrl = `${window.location.pathname}page/` + nextPage
+  const nextPage = parseInt(postsContainer.getAttribute('data-page')) + 1
+  const totalPages = parseInt(postsContainer.getAttribute('data-totalPages'))
 
-      await fetch(requestUrl)
-        .then((response) => {
-          return response.text()
-        })
-        .then((text) => {
-          const parser = new DOMParser()
-          const html = parser.parseFromString(text, 'text/html')
+  const currentWindowLocation = window.location.pathname
+  const requestUrl =
+    `${
+      currentWindowLocation.includes('page/')
+        ? currentWindowLocation.split('page/')[0]
+        : currentWindowLocation
+    }page/` + nextPage
 
-          const posts = html.querySelectorAll('li > div.post-card')
+  await fetch(requestUrl)
+    .then((response) => {
+      return response.text()
+    })
+    .then((text) => {
+      const parser = new DOMParser()
+      const html = parser.parseFromString(text, 'text/html')
 
-          postsContainer.setAttribute('data-page', nextPage)
+      const posts = html.querySelectorAll('li > div.post-card')
 
-          posts.forEach((post) => {
-            postsContainer.appendChild(post)
-          })
+      postsContainer.setAttribute('data-page', nextPage)
 
-          if (totalPages == nextPage) {
-            clickedButton.remove()
-          }
-        })
-        .catch((error) => {
-          clickedButton.classList.remove('disabled')
-        })
+      posts.forEach((post) => {
+        postsContainer.appendChild(post)
+      })
 
+      if (totalPages == nextPage) {
+        clickedButton.remove()
+      }
+    })
+    .catch((error) => {
       clickedButton.classList.remove('disabled')
     })
-  })
+
+  clickedButton.classList.remove('disabled')
+  clickedButton.addEventListener('click', handleLoadMorePosts)
 }

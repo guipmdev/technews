@@ -16,10 +16,13 @@
         {% for category in site.categories %}
         <!-- prettier-ignore -->
         {% capture category_name %}{{category[0]}}{% endcapture %}
-        {% capture search_path %}/search/{{category_name}}{% endcapture %}
+        {% capture category_path %}/{{category_name}}{% endcapture %}
 
         <li>
-          <a class="text-decoration-none" href="{{search_path | absolute_url}}">
+          <a
+            class="text-decoration-none"
+            href="{{category_path | absolute_url}}"
+          >
             {% include category.html type="clickable" text=category_name %}
           </a>
         </li>
