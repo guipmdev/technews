@@ -1,0 +1,7 @@
+.team-members {
+  flex-direction: column;
+
+  @media (min-width: 640px) {
+    flex-direction: row;
+  }
+}
