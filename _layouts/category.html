@@ -12,7 +12,7 @@ layout: with-newsletter
   <ol class="post-listing d-flex flex-column align-items-center gap-4">
     <!-- prettier-ignore -->
     {% for post in filteredPosts %}
-    <li>{% include post-card.html type='search' post=post %}</li>
+    <li class="w-100">{% include post-card.html type='search' post=post %}</li>
     {% endfor %}
   </ol>
 </section>
