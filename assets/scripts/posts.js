@@ -1,3 +1,5 @@
+import { updateSocialButtonsStatus } from './socialButtonsStatus.js'
+
 export function getMyPosts() {
   return (
     JSON.parse(
@@ -46,6 +48,7 @@ async function handleLoadMorePosts(event) {
       const parser = new DOMParser()
       const html = parser.parseFromString(text, 'text/html')
 
+      updateSocialButtonsStatus(html)
       const posts = html.querySelectorAll('li > div.post-card')
 
       postsContainer.setAttribute('data-page', nextPage)
@@ -59,6 +62,10 @@ async function handleLoadMorePosts(event) {
       }
     })
     .catch((error) => {
+      console.log(error)
+
+      postsContainer.setAttribute('data-page', nextPage - 1)
+
       clickedButton.classList.remove('disabled')
     })
 
