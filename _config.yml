@@ -27,7 +27,7 @@ baseurl: "/blog-html-e-bootstrap" # place folder name if the site is served in a
 
 # Build settings
 plugins:
-  - jekyll-paginate-v2
+  - jekyll-paginate
   - jekyll-feed
 
 # Exclude from processing.
@@ -57,11 +57,5 @@ sass:
     sass_dir: _sass
 
 # Pagination Settings
-pagination:
-  enabled: true
-  per_page: 6
-  permalink: '/page/:num/'
-  title: ':title - Página :num'
-  limit: 0
-  sort_field: 'date'
-  sort_reverse: true
+paginate: 6
+paginate_path: '/page/:num/'
