@@ -15,20 +15,38 @@ permalink: /contact
   </div>
 
   <form
+    class="d-flex flex-column align-items-end gap-4 w-100"
+    style="max-width: 640px"
     action="{{ '/_api/processaContato.php' | absolute_url }}"
     method="POST"
     enctype="multipart/form-data"
-    class="d-flex flex-column align-items-end gap-4 w-100"
-    style="max-width: 640px"
   >
-    {% include field.html label='Nome completo' placeholder='João da Silva'
-    name='nome' required=true %}<!---->
-    {% include field.html label='E-mail' placeholder='joaodasilva@email.com'
-    name='email' required=true %}<!---->
-    {% include field.html label='Mensagem' name='mensagem' required=true
-    placeholder='Adorei as matérias que falam sobre Inteligência Artificial!'
-    type='textarea'%}<!---->
-    {% include button.html name="acao" text='Enviar' responsive=true %}
+    <!-- prettier-ignore -->
+    {% include field.html
+      label='Nome completo'
+      placeholder='João da Silva'
+      name='nome'
+      required=true
+    %}
+    {% include field.html
+      label='E-mail'
+      placeholder='joaodasilva@email.com'
+      name='email'
+      required=true
+    %}
+    {% include field.html
+      type='textarea'
+      label='Mensagem'
+      placeholder='Adorei as matérias que falam sobre Inteligência Artificial!'
+      name='mensagem'
+      required=true
+    %}
+    {% include button.html
+      type='submit'
+      name="acao"
+      text='Enviar'
+      responsive=true
+    %}
   </form>
 </section>
 
@@ -36,18 +54,24 @@ permalink: /contact
   <h3 class="title-3">Nossa incrível equipe!</h3>
 
   <div class="d-flex gap-2">
-    {% include team-member.html name='Bruno do Amaral' headline='Web developer'
-    role='Desenvolvedor web de nosso blog'
-    image_url='https://media.licdn.com/dms/image/C4D03AQEZ7g6bMFVDyg/profile-displayphoto-shrink_800_800/0/1623178761223?e=1700092800&v=beta&t=fS1hGvLWHmeTZ5wXbj7MzT45_kRRvPHsqZxWgGQP1SQ'
-    %}<!---->
-    {% include team-member.html name='Guilherme Milék' headline='Deus do HTML e
-    CSS' role='Simplesmente o deus da web de nosso blog'
-    image_url='https://media.licdn.com/dms/image/D4D03AQF9__QIsPgskg/profile-displayphoto-shrink_800_800/0/1687914739156?e=1700092800&v=beta&t=Wl61zcA8A8N8aGkvNIbj38exdOyM17mLjWqctnVDv9g'
-    %}<!---->
-    {% include team-member.html name='Ricardo Augusto Franco' headline='Pior
-    desenvolvedor web da história' role='O pior desenvolvedor web que nosso blog
-    poderia ter'
-    image_url='https://media.licdn.com/dms/image/C4D03AQGCzlbjWh9sew/profile-displayphoto-shrink_800_800/0/1549985524380?e=1700092800&v=beta&t=i8d-96W2xqGtFwxZzYv5WhapxdMVoGydJMD4uezTtdU'
-    %}<!---->
+    <!-- prettier-ignore -->
+    {% include team-member.html
+      image_url='https://media.licdn.com/dms/image/C4D03AQEZ7g6bMFVDyg/profile-displayphoto-shrink_800_800/0/1623178761223?e=1700092800&v=beta&t=fS1hGvLWHmeTZ5wXbj7MzT45_kRRvPHsqZxWgGQP1SQ'
+      name='Bruno do Amaral'
+      headline='Web developer'
+      role='Desenvolvedor web do nosso blog'
+    %}
+    {% include team-member.html
+      image_url='https://media.licdn.com/dms/image/D4D03AQF9__QIsPgskg/profile-displayphoto-shrink_800_800/0/1687914739156?e=1700092800&v=beta&t=Wl61zcA8A8N8aGkvNIbj38exdOyM17mLjWqctnVDv9g'
+      name='Guilherme Milék'
+      headline='Deus do HTML, CSS e JS'
+      role='Simplesmente o deus do nosso blog'
+    %}
+    {% include team-member.html
+      image_url='https://media.licdn.com/dms/image/C4D03AQGCzlbjWh9sew/profile-displayphoto-shrink_800_800/0/1549985524380?e=1700092800&v=beta&t=i8d-96W2xqGtFwxZzYv5WhapxdMVoGydJMD4uezTtdU'
+      name='Ricardo Augusto Franco'
+      headline='Pior desenvolvedor web da história'
+      role='O pior desenvolvedor web que o nosso blog poderia ter'
+    %}
   </div>
 </section>
