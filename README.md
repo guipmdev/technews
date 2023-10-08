@@ -93,9 +93,25 @@
 
 ## 📍 Overview
 
-The project is a _Jekyll-based_ web application that
+The project is a web application based on _Jekyll_ that works as a complete source of news and information about technology, covering various topics from software development to hardware innovations, making it easy for enthusiasts, professionals and students of technology to stay informed about the latest trends.
+
+The site features a user-friendly design, including responsive layouts, newsletter sign-up and social media integration, making it a must-visit destination for technology updates.
 
 ## ✨ Features
+
+📚 Access a wealth of **tech information**
+
+📂 Quick access to **content filtered by category**
+
+⏭️ **View more articles** without leaving the main page with the **'Load more' button**
+
+📊 **Share, like, and save posts**
+
+💬 Engage in discussions by leaving **comments on articles using your GitHub account**
+
+📝 Enjoy the convenience of interactive **forms powered by PHP**
+
+📱 **Optimized for seamless viewing on all devices**
 
 ## 🤖 Demo
 
