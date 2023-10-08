@@ -115,6 +115,8 @@ O site apresenta um design fácil de usar, incluindo layouts responsivos, inscri
 
 ## 🤖 Demo
 
+https://github.com/guipmdev/technews/assets/136738335/375e607c-c54c-4a8e-a191-7df84d6a5005
+
 ## 🎨 Layout
 
 O layout da aplicação foi projetado por **guipm.dev** e está disponível no [Figma](https://www.figma.com/file/CrB7qDGMw67VW5XSY1hFN2/Technews).
