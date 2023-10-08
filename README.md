@@ -115,6 +115,8 @@ The site features a user-friendly design, including responsive layouts, newslett
 
 ## 🤖 Demo
 
+https://github.com/guipmdev/technews/assets/136738335/375e607c-c54c-4a8e-a191-7df84d6a5005
+
 ## 🎨 Layout
 
 The layout of the application was designed by **guipm.dev** and is available on [Figma](https://www.figma.com/file/CrB7qDGMw67VW5XSY1hFN2/Technews).
